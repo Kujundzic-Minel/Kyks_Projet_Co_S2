@@ -2,6 +2,6 @@
 </script>
 
 <template>
-    <footer>
-    </footer>   
+    <header>
+    </header>   
 </template>
