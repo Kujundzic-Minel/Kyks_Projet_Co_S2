@@ -2,6 +2,12 @@
 import { RouterView } from 'vue-router';
 import HeaderPage from './components/HeaderPage.vue'
 import FooterPage from './components/FooterPage.vue'
+
+import aide from '@/pages/aide.vue'
+import apropos from '@/pages/apropos.vue'
+import confidentialite from '@/pages/confientalite.vue'
+import notifications from '@/pages/notifications.vue'
+import securite from '@/pages/securite.vue'
 </script>
 
 <template>
