@@ -27,28 +27,28 @@ function closeMenu() {
         <button class="z-5"><loupe/></button>
         <button class="relative z-10 flex h-5 w-8 flex-col justify-between" 
         @click="activeMenu = !activeMenu">
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-black': activeMenu }"></div>
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-black opacity-0': activeMenu }"></div>
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ '-translate-y-[9px] -rotate-45 bg-black': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-white': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-white opacity-0': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ '-translate-y-[9px] -rotate-45 bg-white': activeMenu }"></div>
       </button>
         <nav class="invisible opacity-0 fixed inset-0 h-screen w-screen bg-indigo text-2xl text-white transition-all duration-300 ease-in-out"
         lg:visible lg:relative lg:flex lg:h-auto lg:w-auto lg:items-center lg:bg-purple-500 lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100
-    :class="{ '!visible opacity-100': activeMenu }" v-scroll-lock="activeMenu">
+    :class="{ '!visible opacity-100 bg-purple-950': activeMenu }" v-scroll-lock="activeMenu">
             <ul lg:m-0 lg:flex>
                 <li class="menu-item">
-                    <RouterLink class="menu-link" to="<notifications/>"><bell/>Notifications</RouterLink>
+                    <RouterLink class="menu-link text-white" to="<notifications/>"><bell/>Notifications</RouterLink>
                 </li>
                 <li class="menu-item">
-                    <RouterLink class="menu-link" to="<confidentialite/>" @click="closeMenu"><shield/>Confidentialité</RouterLink>
+                    <RouterLink class="menu-link text-white" to="<confidentialite/>" @click="closeMenu"><shield/>Confidentialité</RouterLink>
                 </li>
                 <li class="menu-item">
-                    <RouterLink class="menu-link" to="<securite/>" @click="closeMenu"><lock/><p>Sécurité</p></RouterLink>
+                    <RouterLink class="menu-link text-white" to="<securite/>" @click="closeMenu"><lock/><p>Sécurité</p></RouterLink>
                 </li>
                 <li class="menu-item">
-                    <RouterLink class="menu-link" to="<aide/>" @click="closeMenu"><helpcircle/>Aide</RouterLink>
+                    <RouterLink class="menu-link text-white" to="<aide/>" @click="closeMenu"><helpcircle/>Aide</RouterLink>
                 </li>
                 <li class="menu-item">
-                    <RouterLink class="menu-link" to="<apropos/>" @click="closeMenu"><info/>A Propos</RouterLink>
+                    <RouterLink class="menu-link text-white" to="<apropos/>" @click="closeMenu"><info/>A Propos</RouterLink>
                 </li>
             </ul>
         </nav>

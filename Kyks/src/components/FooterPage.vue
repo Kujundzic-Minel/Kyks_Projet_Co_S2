@@ -25,7 +25,7 @@ import kyks from '@/assets/icons/KYKS.vue'
         </address>
       </div>
 
-      <div class="col-span-3 col-start-7"><kyks/></div>
+      <div class="col-span-3 col-start-1"><kyks/></div>
   
       <div class="col-span-3 col-start-10 space-y-3">
         <h4 class="font-bold uppercase">Nous suivre</h4>
