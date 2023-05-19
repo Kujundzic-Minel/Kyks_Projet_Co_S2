@@ -25,7 +25,7 @@ function closeMenu() {
 <template>
     <header class="fixed z-10 flex w-full translate-y-0 items-stretch justify-between bg-purple-50 px-6 py-2 transition-all duration-300 ease-in-out">
         <button class="z-5"><loupe/></button>
-        <button class="relative z-10 flex h-5 w-8 flex-col justify-between" 
+        <button class="relative z-10 flex h-5 w-8 flex-col justify-between mt-2" 
         @click="activeMenu = !activeMenu">
         <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-white': activeMenu }"></div>
         <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-white opacity-0': activeMenu }"></div>
@@ -34,7 +34,7 @@ function closeMenu() {
         <nav class="invisible opacity-0 fixed inset-0 h-screen w-screen bg-indigo text-2xl text-white transition-all duration-300 ease-in-out"
         lg:visible lg:relative lg:flex lg:h-auto lg:w-auto lg:items-center lg:bg-purple-500 lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100
     :class="{ '!visible opacity-100 bg-purple-950': activeMenu }" v-scroll-lock="activeMenu">
-            <ul lg:m-0 lg:flex>
+            <ul lg:m-0 lg:flex class="mt-20">
                 <li class="menu-item">
                     <RouterLink class="menu-link text-white" to="<notifications/>"><bell/>Notifications</RouterLink>
                 </li>
