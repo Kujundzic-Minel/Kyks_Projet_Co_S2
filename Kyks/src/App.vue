@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router';
 import HeaderPage from './components/HeaderPage.vue'
 import FooterPage from './components/FooterPage.vue'
-import GoogleMaps from '@/components/GoogleMaps.vue'
 
 import aide from '@/pages/aide.vue'
 import apropos from '@/pages/apropos.vue'
@@ -12,11 +11,10 @@ import securite from '@/pages/securite.vue'
 </script>
 
 <template>
-  <!-- <HeaderPage/> -->
+  <HeaderPage/>
   <main class="">
     <h1 class="text-center">Bonjour</h1>
     <RouterView/>
-    <GoogleMap/>
   </main>
-  <!-- <FooterPage/> -->
+  <FooterPage/>
 </template>
