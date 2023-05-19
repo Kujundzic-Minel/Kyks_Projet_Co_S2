@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router';
 import HeaderPage from './components/HeaderPage.vue'
 import FooterPage from './components/FooterPage.vue'
-import GoogleMap from '@/components/GoogleMaps.vue'
+import GoogleMaps from '@/components/GoogleMaps.vue'
 
 import aide from '@/pages/aide.vue'
 import apropos from '@/pages/apropos.vue'
