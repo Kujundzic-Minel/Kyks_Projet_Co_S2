@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router';
 import HeaderPage from './components/HeaderPage.vue'
 import FooterPage from './components/FooterPage.vue'
+import NavigationPage from './components/NavigationPage.vue'
 
 import aide from '@/pages/aide.vue'
 import apropos from '@/pages/apropos.vue'
@@ -11,10 +12,12 @@ import securite from '@/pages/securite.vue'
 </script>
 
 <template>
-  <HeaderPage/>
+  <!-- <HeaderPage/> -->
   <main class="">
     <h1 class="text-center">Bonjour</h1>
     <RouterView/>
+    <NavigationPage/>
+
   </main>
-  <FooterPage/>
+  <!-- <FooterPage/> -->
 </template>
