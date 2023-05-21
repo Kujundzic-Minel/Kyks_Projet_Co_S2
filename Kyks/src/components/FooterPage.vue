@@ -11,8 +11,8 @@ import kyks from '@/assets/icons/KYKS.vue'
       <nav class="col-span-3 col-start-7 space-y-3"> 
         <h4 class="font-bold uppercase">Menu</h4>
         <ul>
-          <li><a href="#" class="text-white">Mentions légales</a></li>
-          <li><a href="#" class="text-white">Contact</a></li>
+          <li><RouterLink to="/confidentialite" class="text-white">Mentions légales</RouterLink></li>
+          <li><RouterLink to="/contact" class="text-white">Contact</RouterLink></li>
         </ul>
       </nav>
   

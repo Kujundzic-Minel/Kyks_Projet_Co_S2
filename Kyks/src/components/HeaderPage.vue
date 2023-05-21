@@ -9,7 +9,7 @@ import bell from '@/assets/icons/bell.vue'
 
 import aide from '@/pages/aide.vue'
 import apropos from '@/pages/apropos.vue'
-import confidentialite from '@/pages/confientalite.vue'
+import confidentialite from '@/pages/confidentialite.vue'
 import notifications from '@/pages/notifications.vue'
 import securite from '@/pages/securite.vue'
 
@@ -23,32 +23,32 @@ function closeMenu() {
 </script>
 
 <template>
-    <header class="fixed z-10 flex w-full translate-y-0 items-stretch justify-between bg-purple-50 px-6 py-2 transition-all duration-300 ease-in-out">
+    <header class="fixed z-10 flex w-full translate-y-0 items-stretch justify-between bg-purple-50 px-6 py-2 transition-all duration-300 ease-in-out top-0">
         <button class="z-5"><loupe/></button>
         <button class="relative z-10 flex h-5 w-8 flex-col justify-between mt-2" 
         @click="activeMenu = !activeMenu">
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-white': activeMenu }"></div>
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-white opacity-0': activeMenu }"></div>
-        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ '-translate-y-[9px] -rotate-45 bg-white': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-black': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-black opacity-0': activeMenu }"></div>
+        <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ '-translate-y-[9px] -rotate-45 bg-black': activeMenu }"></div>
       </button>
         <nav class="invisible opacity-0 fixed inset-0 h-screen w-screen bg-indigo text-2xl text-white transition-all duration-300 ease-in-out"
         lg:visible lg:relative lg:flex lg:h-auto lg:w-auto lg:items-center lg:bg-purple-500 lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100
-    :class="{ '!visible opacity-100 bg-purple-950': activeMenu }" v-scroll-lock="activeMenu">
-            <ul lg:m-0 lg:flex class="mt-20">
-                <li class="menu-item">
-                    <RouterLink class="menu-link text-white" to="<notifications/>"><bell/>Notifications</RouterLink>
+    :class="{ '!visible opacity-100 bg-white': activeMenu }" v-scroll-lock="activeMenu">
+            <ul lg:m-0 lg:flex class="my-20">
+                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
+                    <RouterLink class="menu-link text-black" to="<notifications/>"><bell/>Notifications</RouterLink>
                 </li>
-                <li class="menu-item">
-                    <RouterLink class="menu-link text-white" to="<confidentialite/>" @click="closeMenu"><shield/>Confidentialité</RouterLink>
+                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
+                    <RouterLink class="menu-link text-black" to="<confidentialite/>" @click="closeMenu"><shield/>Confidentialité</RouterLink>
                 </li>
-                <li class="menu-item">
-                    <RouterLink class="menu-link text-white" to="<securite/>" @click="closeMenu"><lock/><p>Sécurité</p></RouterLink>
+                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
+                    <RouterLink class="menu-link text-black" to="<securite/>" @click="closeMenu"><lock/><p>Sécurité</p></RouterLink>
                 </li>
-                <li class="menu-item">
-                    <RouterLink class="menu-link text-white" to="<aide/>" @click="closeMenu"><helpcircle/>Aide</RouterLink>
+                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
+                    <RouterLink class="menu-link text-black" to="<aide/>" @click="closeMenu"><helpcircle/>Aide</RouterLink>
                 </li>
-                <li class="menu-item">
-                    <RouterLink class="menu-link text-white" to="<apropos/>" @click="closeMenu"><info/>A Propos</RouterLink>
+                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
+                    <RouterLink class="menu-link text-black" to="<apropos/>" @click="closeMenu"><info/>A Propos</RouterLink>
                 </li>
             </ul>
         </nav>

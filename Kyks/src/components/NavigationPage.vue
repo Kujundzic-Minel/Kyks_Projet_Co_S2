@@ -1,5 +1,5 @@
 <template>
-    <div class= "bg-purple-500 flex justify-between pr-3 pl-3 pt-2 pb-2 bottom-0">
+    <div class= "bg-purple-500 flex justify-between fixed bottom-0 w-full rounded-t-xl px-3 py-2">
         <RouterLink to ="/event"><Message/></RouterLink>
         <MapPin/>
         <Profil/>
