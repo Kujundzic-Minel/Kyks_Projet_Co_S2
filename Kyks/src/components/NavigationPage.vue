@@ -2,7 +2,7 @@
     <div class= "bg-purple-500 flex justify-between fixed bottom-0 w-full rounded-t-xl px-3 py-2">
         <RouterLink to ="/event"><Message/></RouterLink>
         <MapPin/>
-        <Profil/>
+        <RouterLink to="/profil"><Profil/></RouterLink>
     </div>
 </template>
 
