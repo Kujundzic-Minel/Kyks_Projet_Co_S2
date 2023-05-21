@@ -31,25 +31,41 @@ function closeMenu() {
         <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'bg-black opacity-0': activeMenu }"></div>
         <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ '-translate-y-[9px] -rotate-45 bg-black': activeMenu }"></div>
       </button>
-        <nav class="invisible opacity-0 fixed inset-0 h-screen w-screen bg-indigo text-2xl text-white transition-all duration-300 ease-in-out"
+        <nav class="invisible opacity-0 fixed inset-0 h-screen w-screen bg-indigo text-2xl text-white transition-all duration-300 ease-in-out "
         lg:visible lg:relative lg:flex lg:h-auto lg:w-auto lg:items-center lg:bg-purple-500 lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100
     :class="{ '!visible opacity-100 bg-white': activeMenu }" v-scroll-lock="activeMenu">
             <ul lg:m-0 lg:flex class="my-20">
-                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
-                    <RouterLink class="menu-link text-black" to="<notifications/>"><bell/>Notifications</RouterLink>
+                
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50" to="<notifications/>">
+                <li class="flex">
+                    <bell/>Notifications
                 </li>
-                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
-                    <RouterLink class="menu-link text-black" to="<confidentialite/>" @click="closeMenu"><shield/>Confidentialité</RouterLink>
+                </RouterLink>
+
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50" to="<confidentialite/>" @click="closeMenu">
+                <li class="flex">
+                    <shield/>Confidentialité
                 </li>
-                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
-                    <RouterLink class="menu-link text-black" to="<securite/>" @click="closeMenu"><lock/><p>Sécurité</p></RouterLink>
+                </RouterLink>
+
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50" to="<securite/>" @click="closeMenu">
+                <li class="flex">
+                    <lock/><p>Sécurité</p>
                 </li>
-                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
-                    <RouterLink class="menu-link text-black" to="<aide/>" @click="closeMenu"><helpcircle/>Aide</RouterLink>
+                </RouterLink>
+
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50" to="<aide/>" @click="closeMenu">
+                <li class="flex">
+                    <helpcircle/>Aide
                 </li>
-                <li class="menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50">
-                    <RouterLink class="menu-link text-black" to="<apropos/>" @click="closeMenu"><info/>A Propos</RouterLink>
+                </RouterLink>
+
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50" to="<apropos/>" @click="closeMenu">
+                <li class="flex">
+                    <info/>A Propos
                 </li>
+                </RouterLink>
+
             </ul>
         </nav>
     </header>

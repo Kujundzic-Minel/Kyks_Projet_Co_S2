@@ -8,13 +8,8 @@ import NavigationPage from './components/NavigationPage.vue'
 <template>
   <HeaderPage/>
   <main class="">
-    <h1 class="text-center">Bonjour</h1>
       <NavigationPage/>
-      <Inscription/>
       <RouterView/>
-
-    
-
   </main>
   <FooterPage/>
 </template>

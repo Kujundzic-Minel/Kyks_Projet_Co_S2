@@ -1,22 +1,21 @@
 <template>
-    <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
-        <etoile/>
-        <p>Défis</p>
-    </div>
-
-    <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
-        <fleche/>
-        <p>Stats</p>
-    </div>
-
-    <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
-        <coeur/>
-        <p>Fairplay</p>
-    </div>
-
-    <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
-        <profil/>
-        <p>Mes adversaires</p>
+    <div class="mt-20">
+        <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
+            <etoile/>
+            <p>Défis</p>
+        </div>
+        <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
+            <fleche/>
+            <p>Stats</p>
+        </div>
+        <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
+            <coeur/>
+            <p>Fairplay</p>
+        </div>
+        <div class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600">
+            <profil/>
+            <p>Mes adversaires</p>
+        </div>
     </div>
 </template>
 
