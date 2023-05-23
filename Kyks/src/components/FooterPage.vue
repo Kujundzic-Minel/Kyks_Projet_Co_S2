@@ -7,8 +7,8 @@ import kyks from '@/assets/icons/KYKS.vue'
 </script>
 
 <template>
-    <footer class="grille space-y-6 bg-purple-500 py-16 px-6 text-white lg:space-y-0 ">
-      <nav class="col-span-3 col-start-7 space-y-3 "> 
+    <footer class="grille space-y-6 bg-purple-500 py-16 px-6 text-white lg:space-y-0">
+      <nav class="col-span-3 col-start-7 space-y-3"> 
         <h4 class="font-bold uppercase">Menu</h4>
         <ul>
           <li><RouterLink to="/confidentialite" class="text-white">Mentions légales</RouterLink></li>
