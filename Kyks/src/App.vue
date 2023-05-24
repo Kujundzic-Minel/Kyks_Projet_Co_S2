@@ -9,7 +9,9 @@ import NavigationPage from './components/NavigationPage.vue'
   <HeaderPage/>
   <main class="">
       <NavigationPage/>
-      <RouterView/>
+      <Suspense>
+        <RouterView/>
+    </Suspense>
   </main>
   <FooterPage/>
 </template>

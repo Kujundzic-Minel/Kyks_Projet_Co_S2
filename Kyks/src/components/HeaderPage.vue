@@ -42,7 +42,7 @@ function closeMenu() {
                 </li>
                 </RouterLink>
 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="<confidentialite/>" @click="closeMenu">
+                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="/confidentialite" @click="closeMenu">
                 <li class="flex items-center">
                     <shield/>Confidentialité
                 </li>
