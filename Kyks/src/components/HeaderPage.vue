@@ -36,31 +36,31 @@ function closeMenu() {
     :class="{ '!visible opacity-100 bg-white': activeMenu }" v-scroll-lock="activeMenu">
             <ul lg:m-0 lg:flex class="my-20 space-y-10 max-w-md mx-auto max-h-sm">
                 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="<notifications/>">
+                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/notifications">
                 <li class="flex items-center">
                     <bell/>Notifications
                 </li>
                 </RouterLink>
 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="/confidentialite" @click="closeMenu">
+                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/confidentialite" @click="closeMenu">
                 <li class="flex items-center">
                     <shield/>Confidentialité
                 </li>
                 </RouterLink>
 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="<securite/>" @click="closeMenu">
+                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/securite" @click="closeMenu">
                 <li class="flex items-center">
                     <lock/><p>Sécurité</p>
                 </li>
                 </RouterLink>
 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="<aide/>" @click="closeMenu">
+                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/aide" @click="closeMenu">
                 <li class="flex items-center">
                     <helpcircle/>Aide
                 </li>
                 </RouterLink>
 
-                <RouterLink class="menu-link text-black menu-item bg-purple-100 rounded-xl mx-4 my-4 border-4 border-purple-500 shadow-xl shadow-purple-950/50 justify-center" to="<apropos/>" @click="closeMenu">
+                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/apropos" @click="closeMenu">
                 <li class="flex items-center">
                     <info/>A Propos
                 </li>
