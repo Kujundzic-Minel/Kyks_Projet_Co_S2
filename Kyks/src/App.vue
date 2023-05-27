@@ -7,7 +7,7 @@ import NavigationPage from './components/NavigationPage.vue'
 
 <template>
   <HeaderPage/>
-  <main class="">
+  <main>
       <NavigationPage/>
       <Suspense>
         <RouterView/>
