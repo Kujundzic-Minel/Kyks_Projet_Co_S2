@@ -58,3 +58,4 @@ export type CollectionResponses = {
 	event: EventResponse
 	users: UsersResponse
 }
+
