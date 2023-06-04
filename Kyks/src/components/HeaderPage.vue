@@ -24,7 +24,16 @@ function closeMenu() {
 
 <template>
     <header class="fixed z-20 flex w-full translate-y-0 items-stretch justify-between bg-purple-50 px-6 py-2 transition-all duration-300 ease-in-out top-0">
-        <button class="z-5"><loupe/></button>
+        
+        <div class="flex justify-center">
+            <form action="" class="relative mx-auto w-max">
+                <input type="search" class="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-purple-300 peer-focus:stroke-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+            </form>
+            
+        </div>
         <button class="relative z-10 flex h-5 w-8 flex-col justify-between mt-2" 
         @click="activeMenu = !activeMenu">
         <div class="ease h-[2px] w-full transform rounded-full bg-black transition duration-300" :class="{ 'translate-y-[9px] rotate-45 bg-black': activeMenu }"></div>
