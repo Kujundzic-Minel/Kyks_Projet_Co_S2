@@ -7,7 +7,7 @@ import info from '@/assets/icons/info.vue'
 import helpcircle from '@/assets/icons/helpcircle.vue'
 import bell from '@/assets/icons/bell.vue'
 
-import aide from '@/pages/aide.vue'
+import aide from '@/pages/moncompte.vue'
 import apropos from '@/pages/apropos.vue'
 import confidentialite from '@/pages/confidentialite.vue'
 import notifications from '@/pages/notifications.vue'
@@ -44,7 +44,13 @@ function closeMenu() {
         lg:visible lg:relative lg:flex lg:h-auto lg:w-auto lg:items-center lg:bg-purple-500 lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100
     :class="{ '!visible opacity-100 bg-white': activeMenu }" v-scroll-lock="activeMenu">
             <ul lg:m-0 lg:flex class="my-20 space-y-10 max-w-md mx-auto max-h-sm">
-                
+
+                 <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/moncompte" @click="closeMenu">
+                <li class="flex items-center">
+                    <helpcircle/>Mon Compte
+                </li>
+                </RouterLink>
+
                 <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/notifications">
                 <li class="flex items-center">
                     <bell/>Notifications
@@ -63,11 +69,7 @@ function closeMenu() {
                 </li>
                 </RouterLink>
 
-                <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/aide" @click="closeMenu">
-                <li class="flex items-center">
-                    <helpcircle/>Aide
-                </li>
-                </RouterLink>
+               
 
                 <RouterLink class="bg-gray-300 flex rounded-xl m-7 px-2 py-2 text-purple-600 font-bold justify-center space-x-3 items-center" to="/apropos" @click="closeMenu">
                 <li class="flex items-center">
