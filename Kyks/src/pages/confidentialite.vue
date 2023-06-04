@@ -3,7 +3,7 @@
 
 <template>
   <main>
-    <div class="mt-20">
+    <div>
       <h1 class="text-xl font-bold text-purple-500 text-center mb-3">Confidentialité</h1>
       
       <h1 class="mx-7 mb-7 font-bold text-gray-500">Politique de confidentialité</h1>
