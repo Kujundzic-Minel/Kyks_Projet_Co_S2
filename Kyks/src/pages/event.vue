@@ -17,13 +17,7 @@ const lesEvent = await getallEvents();
             <add class="mx-auto mb-5"/>
         </div>
     </routerlink>
-           
-        
-
-        <!-- <div v-for="unEvent of lesEvent">
-            <p>Titre : {{ unEvent.titre }}</p>
-            <p>Lieu : {{ unEvent.lieu_event }}</p>
-        </div> -->
+        <h1 class="font-bold text-center text-purple-500 text-3xl mb-5">Les événements</h1>
 
         <div>
             <cardsevent v-for="unEvent in lesEvent" :key="unEvent.id" v-bind="{...unEvent}"/>
