@@ -7,6 +7,7 @@ import routes from '~pages'
 import { createRouter, createWebHistory } from 'vue-router'
 import V3ScrollLock from 'v3-scroll-lock'
 import { plugin, defaultConfig } from '@formkit/vue'
+import axios from 'axios';
 
 
 const app = createApp(App)
@@ -22,6 +23,7 @@ app.use(
   app.use(plugin, defaultConfig)
 
 app.mount('#app')
+
 
 
 
