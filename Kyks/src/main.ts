@@ -22,3 +22,7 @@ app.use(
   app.use(plugin, defaultConfig)
 
 app.mount('#app')
+
+
+
+
