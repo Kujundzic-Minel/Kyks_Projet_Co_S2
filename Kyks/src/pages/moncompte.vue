@@ -64,7 +64,7 @@ const doCreateAccount = async () => {
     <div class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
       <div class="w-full max-w-md space-y-8">
         <div v-if="currentUser">
-          <h1>Oh, tu es là {{ currentUser?.name }} !</h1>
+          <h1 class="font-bold text-center">Oh, tu es là {{ currentUser?.name }} !</h1>
           <div>
             <button type="button" @click="doLogout"
               class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Logout</button>
@@ -175,6 +175,26 @@ const doCreateAccount = async () => {
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  
+
+  <div class="p-4">
+    <div v-if="currentUser" class="border-2 border-orange-500 shadow-md p-4">
+      <h1 class="text-xl font-bold mb-4">Bienvenue, {{ currentUser?.name }} !</h1>
+      <div>
+      </div>
+      <div class="bg-purple-500 p-4 rounded-lg">
+        <h2 class="text-lg font-bold text-orange-200 mb-2">Informations personnelles :</h2>
+        <p class="text-white pb-4"><span class="font-bold">Nom complet</span> : {{ currentUser?.name }}</p>
+        <p class="text-white  pb-4"><span class="font-bold">Email</span> : {{ currentUser?.email }}</p>
+        <p class="text-white  pb-4"><span class="font-bold">Sport</span> : {{ currentUser?.sport }}</p>
+        <p class="text-white  pb-4"><span class="font-bold">Âge</span> : {{ currentUser?.age }}</p>
+        <p class="text-white  pb-4"><span class="font-bold">Genre</span> : {{ currentUser?.gender }}</p>
+      </div>
+    </div>
+    <div v-else>
     </div>
   </div>
 </template>
