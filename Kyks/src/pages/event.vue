@@ -34,7 +34,7 @@ const filteredEvents = computed(() => {
       </div>
     </RouterLink>
     <h1 class="font-bold text-center text-purple-500 text-3xl mb-5">Les événements</h1>
-    <div>
+    <div class="flex justify-center text-purple-500 font-bold">
       <select v-model="filterOption" class="mb-5 mx-auto">
         <option value="all">Tous les événements</option>
         <option value="recent">Les plus récents d'abord</option>
