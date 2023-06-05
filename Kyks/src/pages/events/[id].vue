@@ -3,6 +3,8 @@
       <h1>Page d'événement {{ id }}</h1>
       <p>ongferogiozgneiozgnerziongerzoinon</p>
     </div>
+
+    
 </template>
 
 

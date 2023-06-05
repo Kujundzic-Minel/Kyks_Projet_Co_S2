@@ -1,5 +1,6 @@
 import PocketBase from 'pocketbase';
 import type { EventResponse, EventRecord } from './pocketbase-types';
+import { ref } from 'vue';
 
 
 export const pb = new PocketBase('http://127.0.0.1:8090');
@@ -25,3 +26,5 @@ export async function createEvent(eventData: EventRecord) {
   export async function oneEvent(id: string) {
     return await pb.collection('event').getOne<EventResponse>(id)
   }
+
+
