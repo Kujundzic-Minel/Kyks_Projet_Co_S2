@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-import type { EventResponse } from './pocketbase-types';
+import type { EventResponse, EventRecord } from './pocketbase-types';
 
 
 export const pb = new PocketBase('http://127.0.0.1:8090');
@@ -9,3 +9,14 @@ export async function getallEvents() {
     return events;
 }
 
+
+export async function createEvent(eventData: EventRecord) {
+    try {
+      const response = await pb.collection('events').create(eventData);
+      console.log('Événement créé avec succès', response);
+      return response;
+    } catch (error) {
+      console.error('Erreur lors de la création de l\'événement', error);
+      throw error;
+    }
+  }

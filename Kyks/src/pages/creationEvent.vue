@@ -27,6 +27,7 @@ async function submit() {
       <FormKit
         type="form"
         v-model="event"
+        @submit="submit()"
         :submit-attrs="{
           inputClass: 'bg-blue-500 rounded-xl p-2 text-white font-bold',
           wrapperClass: 'flex justify-center',
