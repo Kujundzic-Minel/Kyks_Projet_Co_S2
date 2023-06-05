@@ -5,7 +5,7 @@ import { pb } from '@/backend';
 import type { EventResponse } from '@/pocketbase-types';
 
 const lesEvent = await pb.collection('event').getFullList<EventResponse>({
-    sort: '-created',
+    sort: '-created', '$autoCancel': false
 });
 
 const props: EventResponse = defineProps<EventResponse>();

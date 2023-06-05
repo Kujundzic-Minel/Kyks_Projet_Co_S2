@@ -7,9 +7,6 @@ import instaCreaEvent from '@/assets/icons/insta-crea-event.vue';
 import autreCreaEvent from '@/assets/icons/autre-crea-event.vue';
 import facebookCreaEvent from '@/assets/icons/facebook-crea-event.vue';
 import whattsapCreaEvent from '@/assets/icons/whattsap-crea-event.vue';
-import copylink from '@/assets/icons/copylink.vue';
-// import { useRouter } from 'vue-router';
-// const router =  useRouter()
 
 
 const event = ref<EventResponse>()

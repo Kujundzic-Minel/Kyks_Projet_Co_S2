@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import aide from '@/pages/aide.vue'
+import creationevent from '@/pages/creationEvent.vue'
 import contact from '@/pages/contact.vue'
 import index from '@/pages/index.vue'
 import securite from '@/pages/securite.vue'
@@ -18,11 +18,6 @@ routes: [
 path: '/',
 name: 'home',
 component: index
-},
-{
-path: '/aide',
-name: 'aide',
-components: aide
 },
 {
 path: '/contact',
