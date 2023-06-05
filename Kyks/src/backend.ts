@@ -20,3 +20,8 @@ export async function createEvent(eventData: EventRecord) {
       throw error;
     }
   }
+
+
+  export async function oneEvent(id: string) {
+    return await pb.collection('event').getOne<EventResponse>(id)
+  }
