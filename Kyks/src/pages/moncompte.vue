@@ -54,6 +54,7 @@ const doCreateAccount = async () => {
     const record = await pb.collection('users').create(data);
 
     await doLogin();
+    window.alert('Compte créé avec succès !');
   } catch (error) {
   }
 }

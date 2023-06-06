@@ -62,7 +62,7 @@ const doCreateAccount = async () => {
 <template>
     
     
-    <h1 class="font-bold text-center">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
+    <h1 class="font-bold text-center">Voici la liste des adversaires présent au dernier event ! {{ currentUser?.name }} !</h1>
 
     <div class="h-[104px] border-y-2 border-t-violet-600 flex justify-between items-center px-4 ">
         <img class="h-[60px] w-[60px]" src="@/../public/img/pdp.png">

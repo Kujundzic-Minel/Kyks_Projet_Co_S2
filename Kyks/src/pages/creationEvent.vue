@@ -14,6 +14,7 @@ const event = ref<EventResponse>()
 async function submit() {
     await pb.collection('event').create(event.value);
     router.push({ name: 'event' });
+    alert("Événement créé avec succès !");
 }
 
 </script>
@@ -27,12 +28,13 @@ async function submit() {
       <FormKit
         type="form"
         v-model="event"
-        @submit="submit()"
+        @submit="submit() "
         :submit-attrs="{
           inputClass: 'bg-blue-500 rounded-xl p-2 text-white font-bold',
           wrapperClass: 'flex justify-center',
           'data-theme': `dark`,
           ignore: false
+          
         }"
         submit-label="Créer"
       >
