@@ -1,39 +1,258 @@
 <script setup lang="ts">
+import { pb } from "@/backend";
+import { ref } from 'vue';
+
+import PocketBase from 'pocketbase';
+const currentUser = ref();
+const username = ref("");
+const password = ref("");
+const fullName = ref(""); 
+const sport = ref("");
+const position = ref("");
+const age = ref("");
+const gender = ref("");
+
+const loginMode = ref(true);
+
+pb.authStore.onChange(() => {
+  currentUser.value = pb.authStore.model
+}, true)
+
+const doLogout = () => {
+  pb.authStore.clear();
+  currentUser.value = null;
+}
+
+const doLogin = async () => {
+  try {
+    const authData = await pb.collection('users')
+      .authWithPassword(username.value, password.value);
+
+    console.log(pb.authStore.isValid);
+    console.log(pb.authStore.token);
+    console.log(pb.authStore.model);
+  } catch (error) {
+    
+  }
+}
+
+const doCreateAccount = async () => {
+  try {
+    const data = {
+      "username": `user_${self.crypto.randomUUID().split("-")[0]}`,
+      "email": username.value,
+      "emailVisibility": true,
+      "password": password.value,
+      "passwordConfirm": password.value,
+      "name": fullName.value,
+      "sport": sport.value,
+      "position": position.value,
+      "age": age.value,
+      "gender": gender.value
+    };
+
+    const record = await pb.collection('users').create(data);
+
+    await doLogin();
+  } catch (error) {
+  }
+}
 </script>
 
 <template>
     
+    
+    <h1 class="font-bold text-center">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
 
-    <div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="@/../public/img/defi-foot-1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="@/../public/img/defi-verouiller.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
-        <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="@/../public/img/defi-verouiller.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-        </div>
+    <div class="flex justify-items-center">
+    <hr class="w-[200px] border border-indigo-600 m-auto lg:w-[1072px]">
+    <p class="pr-10 text-[18px] text-indigo-600 lg:text-[32px] lg:pr-20">Football</p>
     </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
+
+    <div class="h-[160px] my-2 lg:h-[300px] flex w-full overflow-x-auto  pr-2  lg:pl-24 lg:gap-20 lg:pr-24 lg:my-8">
+
+    <RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/but.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
 </div>
 
+
+<div class="h-[160px] my-2 lg:h-[300px] flex w-full overflow-x-auto  pr-2  lg:pl-24 lg:gap-20 lg:pr-24 lg:my-8">
+    <RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/passdec.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="/public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="/public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="/public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="/public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="/public/img/bloque.png">
+
+</div>
+</RouterLink>
+    </div>
+
+
+
+
+    <div class="flex justify-items-center">
+    <hr class="w-[200px] border border-indigo-600 m-auto lg:w-[1072px]">
+    <p class="pr-10 text-[18px] text-indigo-600 lg:text-[32px] lg:pr-20">Basketball</p>
+</div>
+<div class="h-[160px] my-2 lg:h-[300px] flex w-full overflow-x-auto  pr-2  lg:pl-24 lg:gap-20 lg:pr-24 lg:my-8">
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/panier.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+    </div>
+<div class="h-[160px] my-2 lg:h-[300px] flex w-full overflow-x-auto  pr-2  lg:pl-24 lg:gap-20 lg:pr-24 lg:my-8">
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/rebond.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+<RouterLink class="menu-link" to="">
+<div class="ml-12 h-[140px] w-[140px] grid justify-items-center lg:h-[240px] lg:w-[240px]">
+    <img class="h-[120px] w-[120px] lg:h-[240px] lg:w-[240px]" src="@/../public/img/bloque.png">
+
+</div>
+</RouterLink>
+
+</div>
 
 </template>

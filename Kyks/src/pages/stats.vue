@@ -5,9 +5,6 @@
 </p>
 
 
-    <img class="w-full py-5" src="@/../public/img/statsfoot.jpg" alt="">
-
-
 
     <div class="flex flex-wrap justify-center">
       <div
@@ -20,6 +17,10 @@
         <p>{{ stat.assists }} passes décisives</p>
       </div>
     </div>
+
+
+    <img class="w-full py-5" src="@/../public/img/statsfoot.jpg" alt="">
+
   </template>
   
   <script lang="ts">

@@ -6,7 +6,7 @@ import PocketBase from 'pocketbase';
 const currentUser = ref();
 const username = ref("");
 const password = ref("");
-const fullName = ref("");
+const fullName = ref(""); 
 const sport = ref("");
 const position = ref("");
 const age = ref("");
