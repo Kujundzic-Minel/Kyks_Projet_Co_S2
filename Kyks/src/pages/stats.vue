@@ -32,7 +32,7 @@
 
     <div class="rounded-md h-[85px] w-[305px] bg-gray-300 m-auto flex lg:w-[800px] lg:h-[120px]">
         <div class="pl-12 flex items-center gap-24 lg:gap-56 lg:pl-44">
-        <img class="h-[33px] w-[35px] lg:h-[66px] lg:w-[68px]" src="/public/img/Star 7.png">
+        <img class="h-[33px] w-[35px] lg:h-[66px] lg:w-[68px]" src="/public/img/statsstar.png">
         <p class="text-purple-700 text-[20px] lg:text-[40px]">1 Motm</p>
         </div>
     </div>

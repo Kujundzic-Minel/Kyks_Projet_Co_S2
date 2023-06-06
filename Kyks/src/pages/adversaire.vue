@@ -65,28 +65,28 @@ const doCreateAccount = async () => {
     <h1 class="font-bold text-center">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
 
     <div class="h-[104px] border-y-2 border-t-violet-600 flex justify-between items-center px-4 ">
-        <img class="h-[60px] w-[60px]" src="/public/img/Component 34.png">
+        <img class="h-[60px] w-[60px]" src="@/../public/img/pdp.png">
         <p class="font-bold text-[28px]">Yanis</p>
-        <img class="h-[53px] w-[114px]" src="/public/img/Component 38.png">
+        <img class="h-[53px] w-[114px]" src="/public/img/notation.png">
     </div>
     <div class="h-[104px] border-y-2 border-t-violet-600 flex justify-between items-center px-4 ">
-        <img class="h-[60px] w-[60px]" src="/public/img/Component 34.png">
+        <img class="h-[60px] w-[60px]" src="/public/img/pdp.png">
         <p class="font-bold text-[28px]">Léo</p>
-        <img class="h-[53px] w-[114px]" src="/public/img/Component 38.png">
+        <img class="h-[53px] w-[114px]" src="/public/img/notation.png">
     </div>
     <div class="h-[104px] border-y-2 border-t-violet-600 flex justify-between items-center px-4 ">
-        <img class="h-[60px] w-[60px]" src="/public/img/Component 34.png">
+        <img class="h-[60px] w-[60px]" src="/public/img/pdp.png">
         <p class="font-bold text-[28px]">Maxime</p>
-        <img class="h-[53px] w-[114px]" src="/public/img/Component 38.png">
+        <img class="h-[53px] w-[114px]" src="/public/img/notation.png">
     </div>
     <div class="h-[104px] border-y-2 border-t-violet-600 flex justify-between items-center px-4 ">
-        <img class="h-[60px] w-[60px]" src="/public/img/Component 34.png">
+        <img class="h-[60px] w-[60px]" src="/public/img/pdp.png">
         <p class="font-bold text-[28px]">Jules</p>
-        <img class="h-[53px] w-[114px]" src="/public/img/Component 38.png">
+        <img class="h-[53px] w-[114px]" src="/public/img/notation.png">
     </div>
     <div class="h-[104px] border-y-2 border-t-violet-600 border-x-2 border-b-violet-600 flex justify-between items-center px-4 ">
-        <img class="h-[60px] w-[60px]" src="/public/img/Component 34.png">
+        <img class="h-[60px] w-[60px]" src="/public/img/pdp.png">
         <p class="font-bold text-[28px]">Valentin</p>
-        <img class="h-[53px] w-[114px]" src="/public/img/Component 38.png">
+        <img class="h-[53px] w-[114px]" src="/public/img/notation.png">
     </div>
 </template>
