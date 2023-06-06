@@ -62,7 +62,9 @@ const doCreateAccount = async () => {
 <template>
     
     
-    <h1 class="font-bold text-center">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
+    <h1 class="font-bold text-center text-xl px-5">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
+
+    <div class="flex justify-center py-5"><img src="@/../public/img/defi_etoile.svg" alt=""></div>
 
     <div class="flex justify-items-center">
     <hr class="w-[200px] border border-indigo-600 m-auto lg:w-[1072px]">

@@ -60,9 +60,11 @@ const doCreateAccount = async () => {
 </script>
 
 <template>
-     <h1 class="font-bold text-center">Wow.. t'avances bien dans tes défis ! {{ currentUser?.name }} !</h1>
+     <h1 class="font-bold text-center">Wow.. tu es plus fairplay Paredes, {{ currentUser?.name }} !</h1>
 
-    <div class="flex justify-center mx-10 my-10 "><img src="@/../public/img/fairplay.jpg" alt=""></div>
+     <div class="flex justify-center mx-10 my-10"><img src="@/../public/img/faitplay.svg" alt=""></div>
+
+    <!-- <div class="flex justify-center mx-10 my-10 "><img src="@/../public/img/fairplay.jpg" alt=""></div> -->
 
     <div class="flex justify-center"><img src="@/../public/img/fairplaycoeur.svg" alt=""></div>
 

@@ -41,6 +41,7 @@ export default defineComponent({
     const locations = [
       { lat: 47.49489170043829, lng: 6.80914779737556, name: 'Arena25', description: 'Description de Arena25' },
       { lat: 47.48871021911919, lng: 6.811195668540534, name: 'Futsal Soccer', description: 'Description de Futsal Soccer' },
+      { lat: 47.50058607008164, lng: 6.8036407749791294, name: 'Basketball', description: 'Description de stade de basketball' },
     ]
 
     const selectedLocation = ref(null)
