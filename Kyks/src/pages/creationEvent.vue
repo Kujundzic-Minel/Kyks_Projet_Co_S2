@@ -87,12 +87,5 @@ async function submit() {
         <copylink/>
     </div>
 
-    <div class="flex justify-between px-3 mt-10 mb-9">
-        <instaCreaEvent/>   
-        <facebookCreaEvent/>
-        <whattsapCreaEvent/>
-        <autreCreaEvent/>
-    </div>
-
 
 </template>
